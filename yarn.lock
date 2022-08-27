@@ -3399,23 +3399,23 @@ circom@^0.0.35:
     optimist "^0.6.1"
     yargs "^12.0.2"
 
-"circomlib@git+https://github.com/tornadocash/circomlib.git#5beb6aee94923052faeecea40135d45b6ce6172c":
+"circomlib@git+https://github.com/tornadocash-community/circomlib.git#5beb6aee94923052faeecea40135d45b6ce6172c":
   version "0.0.20"
-  resolved "git+https://github.com/tornadocash/circomlib.git#5beb6aee94923052faeecea40135d45b6ce6172c"
+  resolved "git+https://github.com/tornadocash-community/circomlib.git#5beb6aee94923052faeecea40135d45b6ce6172c"
   dependencies:
     blake-hash "^1.1.0"
     blake2b "^2.1.3"
-    snarkjs "git+https://github.com/tornadocash/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
+    snarkjs "git+https://github.com/tornadocash-community/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
     typedarray-to-buffer "^3.1.5"
     web3 "^1.2.11"
 
-"circomlib@git+https://github.com/tornadocash/circomlib.git#c372f14d324d57339c88451834bf2824e73bbdbc":
+"circomlib@git+https://github.com/tornadocash-community/circomlib.git#c372f14d324d57339c88451834bf2824e73bbdbc":
   version "0.0.20"
-  resolved "git+https://github.com/tornadocash/circomlib.git#c372f14d324d57339c88451834bf2824e73bbdbc"
+  resolved "git+https://github.com/tornadocash-community/circomlib.git#c372f14d324d57339c88451834bf2824e73bbdbc"
   dependencies:
     blake-hash "^1.1.0"
     blake2b "^2.1.3"
-    snarkjs "git+https://github.com/peppersec/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
+    snarkjs "git+https://github.com/tornadocash-community/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
     typedarray-to-buffer "^3.1.5"
     web3 "^1.0.0-beta.55"
 
@@ -5554,8 +5554,8 @@ fixed-merkle-tree@^0.6.0:
   resolved "https://registry.yarnpkg.com/fixed-merkle-tree/-/fixed-merkle-tree-0.6.0.tgz#523afc95836999bc7962ad3871afd2a1f2f78e04"
   integrity sha512-qxY7IQuiIE7l/bKIFcgS8ZdHUwNapaE+HwELw6h0QBZ4V+6tqdea6z8iAFKO7B90ZgVfyoj4evAIMsd+J9HN0g==
   dependencies:
-    circomlib "git+https://github.com/tornadocash/circomlib.git#5beb6aee94923052faeecea40135d45b6ce6172c"
-    snarkjs "git+https://github.com/tornadocash/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
+    circomlib "git+https://github.com/tornadocash-community/circomlib.git#5beb6aee94923052faeecea40135d45b6ce6172c"
+    snarkjs "git+https://github.com/tornadocash-community/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
 
 flat-cache@^2.0.1:
   version "2.0.1"
@@ -10292,21 +10292,9 @@ snake-case@^2.1.0:
   dependencies:
     no-case "^2.2.0"
 
-"snarkjs@git+https://github.com/peppersec/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5":
+"snarkjs@git+https://github.com/tornadocash-community/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5":
   version "0.1.20"
-  resolved "git+https://github.com/peppersec/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
-  dependencies:
-    big-integer "^1.6.43"
-    chai "^4.2.0"
-    escape-string-regexp "^1.0.5"
-    eslint "^5.16.0"
-    keccak "^2.0.0"
-    yargs "^12.0.5"
-
-"snarkjs@git+https://github.com/tornadocash/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5":
-  version "0.1.20"
-  uid "869181cfaf7526fe8972073d31655493a04326d5"
-  resolved "git+https://github.com/tornadocash/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
+  resolved "git+https://github.com/tornadocash-community/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5"
   dependencies:
     big-integer "^1.6.43"
     chai "^4.2.0"
@@ -12716,9 +12704,9 @@ webidl-conversions@^2.0.0:
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-2.0.1.tgz#3bf8258f7d318c7443c36f2e169402a1a6703506"
   integrity sha1-O/glj30xjHRDw28uFpQCoaZwNQY=
 
-"websnark@git+https://github.com/tornadocash/websnark.git#4c0af6a8b65aabea3c09f377f63c44e7a58afa6d":
+"websnark@git+https://github.com/tornadocash-community/websnark.git#2041cfa5fa0b71cd5cca9022a4eeea4afe28c9f7":
   version "0.0.4"
-  resolved "git+https://github.com/tornadocash/websnark.git#4c0af6a8b65aabea3c09f377f63c44e7a58afa6d"
+  resolved "git+https://github.com/tornadocash-community/websnark.git#2041cfa5fa0b71cd5cca9022a4eeea4afe28c9f7"
   dependencies:
     big-integer "^1.6.42"
 

@@ -58,6 +58,15 @@ module.exports = {
       // timeoutBlocks: 200,
       skipDryRun: true,
     },
+    ropsten: {
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://ropsten.infura.io/v3/bruh`),
+      network_id: 3,
+      gas: 6000000,
+      gasPrice: utils.toWei('1', 'gwei'),
+      // confirmations: 0,
+      // timeoutBlocks: 200,
+      skipDryRun: true
+    },
     mainnet: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'http://ethereum-rpc.trustwalletapp.com'),
       network_id: 1,
