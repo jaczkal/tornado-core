@@ -14,12 +14,13 @@ pragma solidity ^0.7.0;
 
 import "./MerkleTreeWithHistory.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 interface IVerifier {
   function verifyProof(bytes memory _proof, uint256[6] memory _input) external returns (bool);
 }
 
-abstract contract Tornado is MerkleTreeWithHistory, ReentrancyGuard {
+abstract contract Tornado is MerkleTreeWithHistory, ReentrancyGuard, Ownable {
   IVerifier public immutable verifier;
   uint256 public denomination;
 
@@ -44,9 +45,19 @@ abstract contract Tornado is MerkleTreeWithHistory, ReentrancyGuard {
     uint32 _merkleTreeHeight
   ) MerkleTreeWithHistory(_merkleTreeHeight, _hasher) {
     require(_denomination > 0, "denomination should be greater than 0");
+    require(address(_verifier) != address(0), "non-zero address pls");
+    require(address(_hasher) != address(0), "non-zero address pls");
     verifier = _verifier;
     denomination = _denomination;
   }
+
+  // ---------------------- CUSTOM FUNCTIONS FOR TESTING ---------------------- //
+
+  function setDenomination (uint256 _denomination) public onlyOwner {
+    denomination = _denomination;
+  }
+
+  // -------------------------------------------------------------------------- //
 
   /**
     @dev Deposit funds into the contract. The caller must send (for ETH) or approve (for ERC20) value equal to or `denomination` of this instance.

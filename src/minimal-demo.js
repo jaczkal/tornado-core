@@ -11,10 +11,10 @@ const { toWei } = require('web3-utils')
 
 let web3, contract, netId, circuit, proving_key, groth16
 const MERKLE_TREE_HEIGHT = 20
-const RPC_URL = 'https://kovan.infura.io/v3/0279e3bdf3ee49d0b547c643c2ef78ef'
-const PRIVATE_KEY = 'ad5b6eb7ee88173fa43dedcff8b1d9024d03f6307a1143ecf04bea8ed40f283f' // 0x94462e71A887756704f0fb1c0905264d487972fE
-const CONTRACT_ADDRESS = '0xD6a6AC46d02253c938B96D12BE439F570227aE8E'
-const AMOUNT = '1'
+const RPC_URL = 'https://ropsten.infura.io/v3/d5a8184e3cfe4ebb8d0fb5ddb4c0aab3'
+const PRIVATE_KEY = '6bb3f5ef1786d6ac7d7f1e163c190024c595a8496479a017b0251b3ce307fb73' // 0x94462e71A887756704f0fb1c0905264d487972fE
+const CONTRACT_ADDRESS = '0x6a10579cF458C9745f26c58D6343c86229Ee27b2'
+const AMOUNT = '0.0000001'
 // CURRENCY = 'ETH'
 
 /** Generate random number of specified byte length */
@@ -48,7 +48,7 @@ async function deposit() {
   const tx = await contract.methods
     .deposit(toHex(deposit.commitment))
     .send({ value: toWei(AMOUNT), from: web3.eth.defaultAccount, gas: 2e6 })
-  console.log(`https://kovan.etherscan.io/tx/${tx.transactionHash}`)
+  console.log(`https://ropsten.etherscan.io/tx/${tx.transactionHash}`)
   return `tornado-eth-${AMOUNT}-${netId}-${toHex(deposit.preimage, 62)}`
 }
 
@@ -62,7 +62,7 @@ async function withdraw(note, recipient) {
   const { proof, args } = await generateSnarkProof(deposit, recipient)
   console.log('Sending withdrawal transaction...')
   const tx = await contract.methods.withdraw(proof, ...args).send({ from: web3.eth.defaultAccount, gas: 1e6 })
-  console.log(`https://kovan.etherscan.io/tx/${tx.transactionHash}`)
+  console.log(`https://ropsten.etherscan.io/tx/${tx.transactionHash}`)
 }
 
 /**
@@ -168,7 +168,13 @@ async function main() {
 
   const note = await deposit()
   console.log('Deposited note:', note)
-  await withdraw(note, web3.eth.defaultAccount)
+
+ 
+  console.log('1: ' + await generateMerkleProof(parseNote(note)) 
+           + ' 2: ' + await generateSnarkProof(parseNote(note),web3.eth.defaultAccount))
+
+  withdrawRet = await withdraw(note, web3.eth.defaultAccount)
+  console.log('THIS ->>>>>>' + withdrawRet)
   console.log('Done')
   process.exit()
 }
